@@ -1,0 +1,454 @@
+{
+  "checked_on": "2026-10-21",
+  "models": [
+    {
+      "filename": "quarter_car_active.slx",
+      "sha256": "36f3ace0124961c0404476bf4b1dd82ed3fd005216091c23feee32a5d554ae0d",
+      "bytes": 112425,
+      "blocks": [
+        {
+          "type": "Inport",
+          "name": "Fa",
+          "SID": "5::33"
+        },
+        {
+          "type": "Inport",
+          "name": "x",
+          "SID": "5::1"
+        },
+        {
+          "type": "Inport",
+          "name": "xd",
+          "SID": "5::28"
+        },
+        {
+          "type": "Inport",
+          "name": "z",
+          "SID": "5::29"
+        },
+        {
+          "type": "Inport",
+          "name": "zd",
+          "SID": "5::30"
+        },
+        {
+          "type": "Inport",
+          "name": "r",
+          "SID": "5::31"
+        },
+        {
+          "type": "Demux",
+          "name": " Demux ",
+          "SID": "5::26"
+        },
+        {
+          "type": "S-Function",
+          "name": " SFunction ",
+          "SID": "5::25"
+        },
+        {
+          "type": "Terminator",
+          "name": " Terminator ",
+          "SID": "5::27"
+        },
+        {
+          "type": "Outport",
+          "name": "xdd",
+          "SID": "5::5"
+        },
+        {
+          "type": "Outport",
+          "name": "zdd",
+          "SID": "5::32"
+        },
+        {
+          "type": "Gain",
+          "name": "Gain",
+          "SID": "15"
+        },
+        {
+          "type": "Integrator",
+          "name": "Integrator",
+          "SID": "1"
+        },
+        {
+          "type": "Integrator",
+          "name": "Integrator1",
+          "SID": "2"
+        },
+        {
+          "type": "Integrator",
+          "name": "Integrator2",
+          "SID": "3"
+        },
+        {
+          "type": "Integrator",
+          "name": "Integrator3",
+          "SID": "4"
+        },
+        {
+          "type": "SubSystem",
+          "name": "MATLAB Function",
+          "SID": "5"
+        },
+        {
+          "type": "Mux",
+          "name": "Mux",
+          "SID": "9"
+        },
+        {
+          "type": "Reference",
+          "name": "PID Controller",
+          "SID": "13"
+        },
+        {
+          "type": "Scope",
+          "name": "Scope",
+          "SID": "10"
+        },
+        {
+          "type": "Sin",
+          "name": "Sine Wave",
+          "SID": "19"
+        },
+        {
+          "type": "Step",
+          "name": "Step",
+          "SID": "20"
+        }
+      ],
+      "PID": {
+        "Form": "Parallel",
+        "TimeDomain": "Continuous-time",
+        "P": "150000",
+        "I": "10000",
+        "D": "5000",
+        "N": "100",
+        "UseFilter": "on",
+        "LimitOutput": "off",
+        "AntiWindupMode": "none"
+      },
+      "root_connections": [
+        [
+          [
+            "Src",
+            "4#out:1"
+          ],
+          [
+            "Dst",
+            "5#in:5"
+          ],
+          [
+            "Dst",
+            "3#in:1"
+          ]
+        ],
+        [
+          [
+            "Src",
+            "1#out:1"
+          ],
+          [
+            "Dst",
+            "5#in:3"
+          ],
+          [
+            "Dst",
+            "2#in:1"
+          ]
+        ],
+        [
+          [
+            "Src",
+            "5#out:1"
+          ],
+          [
+            "Dst",
+            "1#in:1"
+          ]
+        ],
+        [
+          [
+            "Src",
+            "5#out:2"
+          ],
+          [
+            "Dst",
+            "4#in:1"
+          ]
+        ],
+        [
+          [
+            "Src",
+            "2#out:1"
+          ],
+          [
+            "Dst",
+            "9#in:1"
+          ],
+          [
+            "Dst",
+            "15#in:1"
+          ],
+          [
+            "Dst",
+            "5#in:2"
+          ]
+        ],
+        [
+          [
+            "Src",
+            "3#out:1"
+          ],
+          [
+            "Dst",
+            "9#in:2"
+          ],
+          [
+            "Dst",
+            "5#in:4"
+          ]
+        ],
+        [
+          [
+            "Src",
+            "9#out:1"
+          ],
+          [
+            "Dst",
+            "10#in:1"
+          ]
+        ],
+        [
+          [
+            "Src",
+            "13#out:1"
+          ],
+          [
+            "Dst",
+            "5#in:1"
+          ]
+        ],
+        [
+          [
+            "Src",
+            "15#out:1"
+          ],
+          [
+            "Dst",
+            "13#in:1"
+          ]
+        ],
+        [
+          [
+            "Src",
+            "20#out:1"
+          ],
+          [
+            "Dst",
+            "5#in:6"
+          ]
+        ]
+      ],
+      "root_block_count": 11,
+      "saved_road_input": "Step (After = 0.05); sine block disconnected"
+    },
+    {
+      "filename": "quarter_car_passive.slx",
+      "sha256": "e59f97395ae41fe4b4932567bcd3725e45717c14994faedde71faf47b1b0119e",
+      "bytes": 95786,
+      "blocks": [
+        {
+          "type": "Inport",
+          "name": "x",
+          "SID": "5::1"
+        },
+        {
+          "type": "Inport",
+          "name": "xd",
+          "SID": "5::28"
+        },
+        {
+          "type": "Inport",
+          "name": "z",
+          "SID": "5::29"
+        },
+        {
+          "type": "Inport",
+          "name": "zd",
+          "SID": "5::30"
+        },
+        {
+          "type": "Inport",
+          "name": "r",
+          "SID": "5::31"
+        },
+        {
+          "type": "Demux",
+          "name": " Demux ",
+          "SID": "5::26"
+        },
+        {
+          "type": "S-Function",
+          "name": " SFunction ",
+          "SID": "5::25"
+        },
+        {
+          "type": "Terminator",
+          "name": " Terminator ",
+          "SID": "5::27"
+        },
+        {
+          "type": "Outport",
+          "name": "xdd",
+          "SID": "5::5"
+        },
+        {
+          "type": "Outport",
+          "name": "zdd",
+          "SID": "5::32"
+        },
+        {
+          "type": "Integrator",
+          "name": "Integrator",
+          "SID": "1"
+        },
+        {
+          "type": "Integrator",
+          "name": "Integrator1",
+          "SID": "2"
+        },
+        {
+          "type": "Integrator",
+          "name": "Integrator2",
+          "SID": "3"
+        },
+        {
+          "type": "Integrator",
+          "name": "Integrator3",
+          "SID": "4"
+        },
+        {
+          "type": "SubSystem",
+          "name": "MATLAB Function",
+          "SID": "5"
+        },
+        {
+          "type": "Mux",
+          "name": "Mux",
+          "SID": "9"
+        },
+        {
+          "type": "Scope",
+          "name": "Scope",
+          "SID": "10"
+        },
+        {
+          "type": "Sin",
+          "name": "Sine Wave",
+          "SID": "19"
+        }
+      ],
+      "root_connections": [
+        [
+          [
+            "Src",
+            "4#out:1"
+          ],
+          [
+            "Dst",
+            "5#in:4"
+          ],
+          [
+            "Dst",
+            "3#in:1"
+          ]
+        ],
+        [
+          [
+            "Src",
+            "1#out:1"
+          ],
+          [
+            "Dst",
+            "5#in:2"
+          ],
+          [
+            "Dst",
+            "2#in:1"
+          ]
+        ],
+        [
+          [
+            "Src",
+            "5#out:1"
+          ],
+          [
+            "Dst",
+            "1#in:1"
+          ]
+        ],
+        [
+          [
+            "Src",
+            "5#out:2"
+          ],
+          [
+            "Dst",
+            "4#in:1"
+          ]
+        ],
+        [
+          [
+            "Src",
+            "19#out:1"
+          ],
+          [
+            "Dst",
+            "5#in:5"
+          ]
+        ],
+        [
+          [
+            "Src",
+            "2#out:1"
+          ],
+          [
+            "Dst",
+            "9#in:1"
+          ],
+          [
+            "Dst",
+            "5#in:1"
+          ]
+        ],
+        [
+          [
+            "Src",
+            "3#out:1"
+          ],
+          [
+            "Dst",
+            "5#in:3"
+          ],
+          [
+            "Dst",
+            "9#in:2"
+          ]
+        ],
+        [
+          [
+            "Src",
+            "9#out:1"
+          ],
+          [
+            "Dst",
+            "10#in:1"
+          ]
+        ]
+      ],
+      "root_block_count": 8,
+      "saved_road_input": "Sine Wave (Amplitude = 0.03)"
+    }
+  ]
+}
